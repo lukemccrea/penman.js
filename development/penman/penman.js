@@ -12,35 +12,15 @@ penman.create = function(id, options){
     //Replace content of editor container with Penman Editor
     editorContainer.innerHTML = `
 <div id='penman-container' class='${options.theme}'>
-<div id='penman-topbar'>
-</div>
-<div id='penman-viewer'>
-</div>
-</div>
+    <div id='penman-topbar'>
+        <div id='penman-menu'>
+        </div>
+    </div>
+    <div id='penman-viewer'>
 
-<style>
-    #penman-topbar {
-        width: 100%;
-        height: 60px;
-        border-bottom: 2px solid grey;
-    }
-    #penman-viewer {
-        width: 100%;
-        height: calc(100% - 62px);
-    }
-    #penman-container {
-        width: 100%;
-        height: 100%;
-    }
-    .light {
-        background-color: white;
-        color: black;
-    }
-    .dark {
-        background-color: #28282b;
-        color: grey;
-    }
-</style>`
+    </div>
+</div>
+<link rel="stylesheet" href="penman/style.css">`
 
 
     return options;
