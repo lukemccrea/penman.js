@@ -1,31 +1,36 @@
-.light {
+.penman .light {
     background-color: white;
     color: black;
 }
 
-.dark {
+.penman .dark {
     background-color: #28282b;
     color: grey;
 }
 
-#penman-topbar {
+.penman-topbar {
     width: 100%;
-    height: 60px;
+    height: 47px;
     border-bottom: 2px solid #d4d4d4;
+    background-color: white;
+    cursor: default;
+    user-select: none;
 }
 
-#penman-viewer {
-    width: 100%;
-    height: calc(100% - 62px);
-    background-color: #e7e6e6
+.penman-viewer {
+    width: calc(100% - 40px);
+    height: calc(100% - 89px);
+    background-color: #e7e6e6;
+    padding: 20px;
+    overflow: auto;
 }
 
-#penman-container {
+.penman-container {
     width: 100%;
     height: 100%;
 }
 
-#penman-menu {
+.penman-menu {
     width: 100%;
     height: 20px;
     border-bottom: 1px solid #d4d4d4;
@@ -33,14 +38,104 @@
 
 /* Dark Styles */
 
-.dark #penman-viewer {
+.dark .penman-viewer {
     background-color: #3e3e3e;
 }
 
-.dark #penman-topbar {
+.dark .penman-topbar {
     border-color: #6a6a6a;
 }
 
-.dark #penman-menu {
+.dark .penman-menu {
     border-color: #6a6a6a;
+}
+
+.penman-page .penman-content {
+    border: none;
+    padding: 20px;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    height: calc(100% - 2in);
+    padding: 0px;
+}
+
+.penman-page .penman-content:focus {
+    outline: none !important;
+}
+
+.penman-toolbar button img {
+    width: 20px;
+    height: 20px;
+}
+
+.penman-toolbar button:hover {
+    background-color: rgb(195, 192, 192);
+}
+
+.penman-toolbar {
+    width: 100%;
+    height: 26px;
+}
+
+.penman-page .penman-content:active {
+    border: none;
+    outline: none;
+}
+
+.penman-menuSection {
+    outline: #d4d4d4 solid 1px;
+    margin: 0px;
+    float: left;
+    height: 26px;
+}
+
+.penman-page {
+    width: 8.5in;
+    height: 11in;
+    background-color: rgb(255, 255, 255);
+    display: block;
+    margin: auto;
+    padding: 1in;
+}
+
+/* Dropdown Button */
+.dropbtn {
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  /* The container <div> - needed to position the dropdown content */
+  
+  /* Dropdown Content (Hidden by Default) */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  /* Change color of dropdown links on hover */
+  .dropdown-content a:hover {background-color: #ddd}
+  
+  /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+  .show {  display:block;}
+
+  #penman-toolbar button {
+    height: 26px;
+    width: 26px;
+    transition: 0.2s;
+    border: none;
+    background-color: white;
+    padding: 3px;
+    cursor: pointer;
+    display: inline-block;
 }
