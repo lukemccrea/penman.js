@@ -81,7 +81,7 @@ penman.create = function (id, options) {
     }
 
     options.execCommand = function(a, b, c, ele) {
-        document.execCommand(a, b, c);
+        let value = document.execCommand(a, b, c);
         if(a === 'fontName') {
 	    let fontDisplay = ele.parentElement.parentElement.firstElementChild
 	    fontDisplay.innerHTML = c;
@@ -89,6 +89,7 @@ penman.create = function (id, options) {
 	    
 	}
 	document.getElementById(id+'-1').firstElementChild.focus();
+	return value;
     }
 
     penman.editors[id] = options;
