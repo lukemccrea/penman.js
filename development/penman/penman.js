@@ -32,9 +32,21 @@ penman.create = function (id, options) {
             </div>
             <div class="penman-menuSection">
                 <div class="dropdown">
-                    <button onclick="this.parentElement.children[1].classList.toggle('show');" class="dropbtn" style='width: auto;'>Dropdown</button>
+                    <button onclick="this.parentElement.children[1].classList.toggle('show');" class="dropbtn" style='width: auto; font-family: Times New Roman;'>Times New Roman</button>
                     <div class="dropdown-content">
-                        <button onclick="penman.editors.${id}.execCommand('fontName(\`Arial\`)')">Arial</button>
+                        <button onclick="penman.editors.${id}.execCommand('fontName', false, 'Arial', this)" style="font-family: arial">Arial</button>
+			<button onclick="penman.editors.${id}.execCommand('fontName', false, 'Times New Roman', this)" style="font-family: Times New Roman">Times New Roman</button>
+			<button onclick="penman.editors.${id}.execCommand('fontName', false, 'Georgia', this)" style="font-family: Georgia">Georgia</button>
+			<button onclick="penman.editors.${id}.execCommand('fontName', false, 'Helvetica', this)" style="font-family: Helvetica">Helvetica</button>
+			<button onclick="penman.editors.${id}.execCommand('fontName', false, 'Courier', this)" style="font-family: Courier">Courier</button>
+			<button onclick="penman.editors.${id}.execCommand('fontName', false, 'Courier New', this)" style="font-family: Courier New">Courier New</button>
+			<button onclick="penman.editors.${id}.execCommand('fontName', false, 'Monaco', this)" style="font-family: Monaco">Monaco</button>
+			<button onclick="penman.editors.${id}.execCommand('fontName', false, 'Copperplate', this)" style="font-family: Copperplate">Copperplate</button>
+			<button onclick="penman.editors.${id}.execCommand('fontName', false, 'Brush Script MT', this)" style="font-family: Brush Script MT">Brush Script MT</button>
+			<button onclick="penman.editors.${id}.execCommand('fontName', false, 'Comic Sans MS', this)" style="font-family: Comic Sans MS">Comic Sans MS</button>
+			<button onclick="penman.editors.${id}.execCommand('fontName', false, 'Apple Chancery', this)" style="font-family: Apple Chancery">Apple Chancery</button>
+			<button onclick="penman.editors.${id}.execCommand('fontName', false, 'Impact', this)" style="font-family: Impact">Impact</button>
+			<button onclick="penman.editors.${id}.execCommand('fontName', false, 'Chalkduster', this)" style="font-family: Chalkduster">Chalkduster</button>
                     </div>
                     </div>
                 </div>
@@ -47,7 +59,7 @@ penman.create = function (id, options) {
         </div>
     </div>
     <div class="penman penman-viewer">
-        <div class="penman-page">
+        <div id="${id}-1"class="penman-page">
             <div class="penman-content" contenteditable>${editorContent}</div>
         </div>
     </div>
@@ -68,9 +80,15 @@ penman.create = function (id, options) {
         }
     }
 
-    options.execCommand = function (e) {
-        document.execCommand(e);
-        document.getElementById('penman-content').focus();
+    options.execCommand = function(a, b, c, ele) {
+        document.execCommand(a, b, c);
+        if(a === 'fontName') {
+	    let fontDisplay = ele.parentElement.parentElement.firstElementChild
+	    fontDisplay.innerHTML = c;
+	    fontDisplay.style.fontFamily = c;
+	    
+	}
+	document.getElementById(id+'-1').firstElementChild.focus();
     }
 
     penman.editors[id] = options;
