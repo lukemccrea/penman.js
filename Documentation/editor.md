@@ -1,4 +1,10 @@
-# Editor *Object*
+---
+layout: default
+title: editor
+parent: Documentation
+---
+
+# editor *Object*
 
 ## Properties
 `theme` - String *Read Only*
