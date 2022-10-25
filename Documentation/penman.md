@@ -2,7 +2,6 @@
 layout: default
 title: penman
 parent: Documentation
-nav_order: 1
 ---
 
 # Properties
@@ -15,4 +14,4 @@ An array of all Penman editor instances.
 
 `create(element, options)`
 
-Creates a new Penman editor inside of the specified element with the specified options. 
+Creates a new Penman editor inside of the specified element with the specified options. Returns an editor object. 
