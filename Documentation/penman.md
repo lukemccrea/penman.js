@@ -4,13 +4,15 @@ title: penman
 parent: Documentation
 ---
 
-# Properties
+# penman *Object*
+
+## Properties
 
 `editors` - Array
 
 An array of all Penman editor instances.
 
-# Methods
+## Methods
 
 `create(element, options)`
 
