@@ -1,7 +1,6 @@
 ---
 layout: default
 title: Home
-parent: Documentation
 nav_order: 1
 ---
 # Penman.js
